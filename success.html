@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yay! I Knew It!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ff4d94; /* Deeper pink */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Quicksand', sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .message-box {
+            padding: 50px;
+            border: 8px double white;
+            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+            max-width: 450px;
+        }
+
+        .success-img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            border: 5px solid white;
+            animation: pulse 2s infinite;
+        }
+
+        h1 { 
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem; 
+            margin: 0; 
+            text-shadow: 3px 3px 0px rgba(255, 77, 148, 1);
+        }
+
+        h2 { 
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem; 
+            margin: 15px 0 0 0; 
+            color: #ffe6f2;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0px white; }
+            50% { transform: scale(1.05); box-shadow: 0 0 20px white; }
+            100% { transform: scale(1); box-shadow: 0 0 0px white; }
+        }
+
+        /* Sparkle effect */
+        .sparkle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.5); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box">
+        <img src="bears.jpg" alt="Happy Bears" class="success-img">
+        <h1>Yeah I know!</h1>
+        <h2>I love you too ❤️</h2>
+    </div>
+
+    <script>
+        // Create random sparkles in the background
+        for (let i = 0; i < 50; i++) {
+            let sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.width = Math.random() * 5 + 'px';
+            sparkle.style.height = sparkle.style.width;
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(sparkle);
+        }
+    </script>
+</body>
+</html>
